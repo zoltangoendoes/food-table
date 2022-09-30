@@ -1,45 +1,55 @@
-<h2 style="font-variant: small-caps;">Available foods</h2>
-<ul>
-  <li *ngFor="let food of availableFoods">
-    <p>
-      {{ food.name }} - {{ food.type }}
-      <mat-icon *ngIf="food.type == 'fruit'" style="color: cyan">
-        trip_origin</mat-icon
-      >
-      <mat-icon *ngIf="food.type == 'vegetable'" style="color: green">
-        trip_origin</mat-icon
-      >
-      <mat-icon *ngIf="food.type == 'meat'" style="color: red">
-        trip_origin</mat-icon
-      >
-      <mat-icon *ngIf="food.type == 'grain'" style="color: orange">
-        trip_origin</mat-icon
-      >
-    </p>
+<mat-expansion-panel>
+  <mat-expansion-panel-header style="background-color:lightgrey">
+    <mat-panel-title>
+      <h2 style="font-variant: small-caps;">Available foods</h2>
+    </mat-panel-title>
+  </mat-expansion-panel-header>
 
-    <ul *ngIf="food.combinableWith" class="combination-list">
-      <mat-expansion-panel hideToggle>
-        <mat-expansion-panel-header style="background-color:lightgrey">
-          <mat-panel-title> Combinable with </mat-panel-title>
-        </mat-expansion-panel-header>
-        <li *ngFor="let subfood of food.combinableWith">
-          <p>
-            {{ subfood.name }} - {{ subfood.type }}
-            <mat-icon *ngIf="subfood.type == 'fruit'" style="color: cyan">
-              trip_origin</mat-icon
-            >
-            <mat-icon *ngIf="subfood.type == 'vegetable'" style="color: green">
-              trip_origin</mat-icon
-            >
-            <mat-icon *ngIf="subfood.type == 'meat'" style="color: red">
-              trip_origin</mat-icon
-            >
-            <mat-icon *ngIf="subfood.type == 'grain'" style="color: orange">
-              trip_origin</mat-icon
-            >
-          </p>
-        </li>
-      </mat-expansion-panel>
-    </ul>
-  </li>
-</ul>
+  <ul>
+    <li *ngFor="let food of availableFoods">
+      <p>
+        {{ food.name }} - {{ food.type }}
+        <mat-icon *ngIf="food.type == 'fruit'" style="color: cyan">
+          trip_origin</mat-icon
+        >
+        <mat-icon *ngIf="food.type == 'vegetable'" style="color: green">
+          trip_origin</mat-icon
+        >
+        <mat-icon *ngIf="food.type == 'meat'" style="color: red">
+          trip_origin</mat-icon
+        >
+        <mat-icon *ngIf="food.type == 'grain'" style="color: orange">
+          trip_origin</mat-icon
+        >
+      </p>
+
+      <ul *ngIf="food.combinableWith" class="combination-list">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header style="background-color:lightgrey">
+            <mat-panel-title> Combinable with </mat-panel-title>
+          </mat-expansion-panel-header>
+          <li *ngFor="let subfood of food.combinableWith">
+            <p>
+              {{ subfood.name }} - {{ subfood.type }}
+              <mat-icon *ngIf="subfood.type == 'fruit'" style="color: cyan">
+                trip_origin</mat-icon
+              >
+              <mat-icon
+                *ngIf="subfood.type == 'vegetable'"
+                style="color: green"
+              >
+                trip_origin</mat-icon
+              >
+              <mat-icon *ngIf="subfood.type == 'meat'" style="color: red">
+                trip_origin</mat-icon
+              >
+              <mat-icon *ngIf="subfood.type == 'grain'" style="color: orange">
+                trip_origin</mat-icon
+              >
+            </p>
+          </li>
+        </mat-expansion-panel>
+      </ul>
+    </li>
+  </ul>
+</mat-expansion-panel>
