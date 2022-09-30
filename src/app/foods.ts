@@ -6,32 +6,48 @@ export class Food {
 }
 
 export class Foods {
-  public static alma: Food = {
+  private static instance: Foods;
+  public alma: Food = {
     name: 'alma',
     type: 'fruit',
   };
-  public static krumpli: Food = {
+  public krumpli: Food = {
     name: 'krumpli',
     type: 'vegetable',
   };
 
-  public static zabpehely: Food = {
+  public zabpehely: Food = {
     name: 'zabpehely',
     type: 'grain',
   };
 
-  public static barack: Food = {
+  public barack: Food = {
     name: 'barack',
     type: 'fruit',
   };
 
-  public static sutotok: Food = {
+  public sutotok: Food = {
     name: 'sütőtök',
     type: 'vegetable',
   };
 
-  public static csirkemell: Food = {
+  public csirkemell: Food = {
     name: 'csirkemell',
     type: 'meat',
   };
+
+  private setupCombinations() {
+    this.alma.combinableWith = [this.krumpli, this.zabpehely, this.csirkemell];
+    this.krumpli.combinableWith = [this.alma, this.barack, this.csirkemell];
+  }
+  public static getInstance(): Foods {
+    if (!Foods.instance) {
+      Foods.instance = new Foods();
+      Foods.instance.setupCombinations();
+    }
+
+    return Foods.instance;
+  }
+
+  private constructor() {}
 }

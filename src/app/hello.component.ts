@@ -8,14 +8,21 @@ import { Foods, Food } from './foods';
 })
 export class HelloComponent implements OnInit {
   @Input() name: string;
-
+  foods = Foods.getInstance();
   availableFoods: Food[] = [
-    Foods.alma,
-    Foods.sutotok,
-    Foods.barack,
-    Foods.zabpehely,
-    Foods.krumpli,
-    Foods.csirkemell,
+    this.foods.alma,
+    this.foods.sutotok,
+    this.foods.barack,
+    this.foods.zabpehely,
+    this.foods.krumpli,
+    this.foods.csirkemell,
   ];
+
+  sortBy(prop: string) {
+    return this.availableFoods.sort((a, b) =>
+      a[prop] > b[prop] ? 1 : a[prop] === b[prop] ? 0 : -1
+    );
+  }
+
   ngOnInit() {}
 }
