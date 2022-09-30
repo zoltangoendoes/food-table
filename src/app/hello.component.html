@@ -19,8 +19,29 @@
 
     <p></p>
     <p>Combinable with:</p>
-    <span *ngFor="let subfood of food.combinableWith">
-      {{ subfood.name }}
-    </span>
+    <ul class="combination-list">
+      <li *ngFor="let subfood of food.combinableWith">
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title> Combinable with </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p>
+            {{ subfood.name }} - {{ subfood.type }}
+            <mat-icon *ngIf="subfood.type == 'fruit'" style="color: cyan">
+              trip_origin</mat-icon
+            >
+            <mat-icon *ngIf="subfood.type == 'vegetable'" style="color: green">
+              trip_origin</mat-icon
+            >
+            <mat-icon *ngIf="subfood.type == 'meat'" style="color: red">
+              trip_origin</mat-icon
+            >
+            <mat-icon *ngIf="subfood.type == 'grain'" style="color: orange">
+              trip_origin</mat-icon
+            >
+          </p>
+        </mat-expansion-panel>
+      </li>
+    </ul>
   </li>
 </ul>
