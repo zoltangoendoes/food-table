@@ -1,0 +1,26 @@
+<h2 style="font-variant: small-caps;">Available foods</h2>
+<ul>
+  <li *ngFor="let food of availableFoods">
+    <p>
+      {{ food.name }} - {{ food.type }}
+      <mat-icon *ngIf="food.type == 'fruit'" style="color: cyan">
+        trip_origin</mat-icon
+      >
+      <mat-icon *ngIf="food.type == 'vegetable'" style="color: green">
+        trip_origin</mat-icon
+      >
+      <mat-icon *ngIf="food.type == 'meat'" style="color: red">
+        trip_origin</mat-icon
+      >
+      <mat-icon *ngIf="food.type == 'grain'" style="color: orange">
+        trip_origin</mat-icon
+      >
+    </p>
+
+    <p></p>
+    <p>Combinable with:</p>
+    <span *ngFor="let subfood of food.combinableWith">
+      {{ subfood.name }}
+    </span>
+  </li>
+</ul>
