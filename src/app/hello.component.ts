@@ -9,14 +9,32 @@ class Food {
 @Component({
   selector: 'hello',
   templateUrl: './hello.component.html',
-  styles: [`h1 { font-family: Lato; }`],
+  styles: [`h1 { font-family: Lato; } .combination-list{list-style:none}`],
 })
 export class HelloComponent implements OnInit {
   @Input() name: string;
+  krumpli: Food = {
+    name: 'krumpli',
+    type: 'vegetable',
+  };
   alma: Food = {
     name: 'alma',
     type: 'fruit',
+    combinableWith: [
+      this.krumpli,
+      {
+        name: 'zabpehely',
+        type: 'grain',
+      },
+    ],
   };
+
+  zabpehely: Food = {
+    name: 'zabpehely',
+    type: 'grain',
+    combinableWith: [this.alma],
+  };
+
   availableFoods: Food[] = [
     this.alma,
     {
@@ -35,10 +53,12 @@ export class HelloComponent implements OnInit {
     {
       name: 'csirkemell',
       type: 'meat',
+      combinableWith: [this.alma],
     },
     {
       name: 'zabpehely',
       type: 'grain',
+      combinableWith: [this.alma],
     },
   ];
   ngOnInit() {}
