@@ -4,3 +4,23 @@
 body {
   color: red;
 }
+
+.list-item {
+  color: saddlebrown;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 8px;
+  border: 1px solid black;
+  margin: 8px 0px 8px 0px;
+}
+.food-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+h2 {
+  font-variant: small-caps;
+}

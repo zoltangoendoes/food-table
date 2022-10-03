@@ -1,4 +1,4 @@
-type foodType = 'fruit' | 'vegetable' | 'grain' | 'meat' | 'other';
+export type foodType = 'fruit' | 'vegetable' | 'grain' | 'meat' | 'other';
 export class Food {
   type: foodType;
   name: String;
@@ -22,7 +22,7 @@ export class Foods {
   };
 
   public barack: Food = {
-    name: 'barack',
+    name: 'őszi barack',
     type: 'fruit',
   };
 
@@ -36,9 +36,32 @@ export class Foods {
     type: 'meat',
   };
 
+  public csirkemaj: Food = {
+    name: 'csirke máj',
+    type: 'meat',
+  };
+
+  public rizspep: Food = {
+    name: 'rizspép',
+    type: 'grain',
+  };
+
   private setupCombinations() {
-    this.alma.combinableWith = [this.krumpli, this.zabpehely, this.csirkemell];
-    this.krumpli.combinableWith = [this.alma, this.barack, this.csirkemell];
+    (this.alma.combinableWith = [
+      this.krumpli,
+      this.zabpehely,
+      this.csirkemell,
+      this.rizspep,
+      this.csirkemaj,
+    ]),
+      (this.krumpli.combinableWith = [this.alma, this.barack, this.csirkemell]);
+    this.barack.combinableWith = [
+      this.alma,
+      this.rizspep,
+      this.zabpehely,
+      this.csirkemell,
+      this.csirkemaj,
+    ];
   }
   public static getInstance(): Foods {
     if (!Foods.instance) {
