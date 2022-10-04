@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FooditemComponent } from './fooditem/fooditem.component';
 import { Foods, Food, foodType } from './foods';
-
 @Component({
   selector: 'hello',
   templateUrl: './hello.component.html',
@@ -20,6 +20,12 @@ export class HelloComponent implements OnInit {
 
   sortBy(prop: string) {
     return this.availableFoods.sort((a, b) =>
+      a[prop] > b[prop] ? 1 : a[prop] === b[prop] ? 0 : -1
+    );
+  }
+
+  sortListBy(list:any,prop: string) {
+    return list.sort((a, b) =>
       a[prop] > b[prop] ? 1 : a[prop] === b[prop] ? 0 : -1
     );
   }

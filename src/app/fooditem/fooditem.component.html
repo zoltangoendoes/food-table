@@ -1,0 +1,21 @@
+<div class="flex-between">
+
+    <!--- {{ food.type }}-->
+    <div class="flex-between">
+        <mat-icon *ngIf="food.type == 'fruit'" class="fruit">
+            lens</mat-icon>
+        <mat-icon *ngIf="food.type == 'vegetable'" class="vegetable">
+            lens</mat-icon>
+        <mat-icon *ngIf="food.type == 'meat'" style="color: rgb(0, 149, 255)">
+            lens</mat-icon>
+        <mat-icon *ngIf="food.type == 'grain'" style="color: orange">
+            lens</mat-icon>
+        <mat-icon *ngIf="food.type == 'spice'" style="color: rgb(87, 3, 87)">
+            lens</mat-icon>
+        <div class="food-name-container">{{ food.name }}</div>
+    </div>
+    <div>
+        <mat-icon class="green-sign" *ngIf="food.introduced">check_circle</mat-icon>
+        <mat-icon class="red-sign" *ngIf="!food.introduced">cancel</mat-icon>
+    </div>
+</div>

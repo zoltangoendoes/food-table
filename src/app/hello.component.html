@@ -1,6 +1,7 @@
+
 <mat-accordion multi="true">
   <mat-expansion-panel [expanded]="true" (opened)="(true)">
-    <mat-expansion-panel-header style="background-color:lightgrey">
+    <mat-expansion-panel-header class="panel-header">
       <mat-panel-title>
         <h2>Available foods</h2>
       </mat-panel-title>
@@ -11,56 +12,15 @@
       <ng-template matExpansionPanelContent>
         <mat-list-item *ngFor="let food of sortBy('type')">
           <div class="list-item">
-            <div class="food-header">
-              {{ food.name }}
-              <!--- {{ food.type }}-->
-              <mat-icon *ngIf="food.type == 'fruit'" style="color: cyan">
-                trip_origin</mat-icon
-              >
-              <mat-icon *ngIf="food.type == 'vegetable'" style="color: green">
-                trip_origin</mat-icon
-              >
-              <mat-icon *ngIf="food.type == 'meat'" style="color: red">
-                trip_origin</mat-icon
-              >
-              <mat-icon
-                matListAvatar
-                *ngIf="food.type == 'grain'"
-                style="color: orange"
-              >
-                trip_origin</mat-icon
-              >
-            </div>
-
+            <fooditem [food]="food"></fooditem>            
             <mat-accordion *ngIf="food.combinableWith" multi="false">
               <mat-expansion-panel [expanded]="false" (opened)="(false)">
                 <mat-expansion-panel-header style="background-color:lightgrey">
                   <mat-panel-title> Combinable with </mat-panel-title>
                 </mat-expansion-panel-header>
-                <div *ngFor="let subfood of food.combinableWith">
+                <div *ngFor="let subfood of sortListBy(food.combinableWith,'type')">
                   <p>
-                    {{ subfood.name }} - {{ subfood.type }}
-                    <mat-icon
-                      *ngIf="subfood.type == 'fruit'"
-                      style="color: cyan"
-                    >
-                      trip_origin</mat-icon
-                    >
-                    <mat-icon
-                      *ngIf="subfood.type == 'vegetable'"
-                      style="color: green"
-                    >
-                      trip_origin</mat-icon
-                    >
-                    <mat-icon *ngIf="subfood.type == 'meat'" style="color: red">
-                      trip_origin</mat-icon
-                    >
-                    <mat-icon
-                      *ngIf="subfood.type == 'grain'"
-                      style="color: orange"
-                    >
-                      trip_origin</mat-icon
-                    >
+                    <fooditem [food]="subfood"></fooditem>                    
                   </p>
                 </div>
               </mat-expansion-panel>
