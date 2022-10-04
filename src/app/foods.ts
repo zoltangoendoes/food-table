@@ -1,4 +1,7 @@
-export type foodType = 'fruit' | 'vegetable' | 'grain' | 'meat' | 'spice' | 'other';
+
+
+export const FoodTypes = ['fruit' , 'vegetable' , 'grain' , 'protein' , 'spice' , 'other']
+export type foodType = typeof FoodTypes[number]
 export class Food {
   type: foodType;
   name: String;
@@ -38,13 +41,13 @@ export class Foods {
 
   public csirkemell: Food = {
     name: 'csirkemell',
-    type: 'meat',
+    type: 'protein',
     introduced: true
   };
 
   public csirkemaj: Food = {
     name: 'csirke máj',
-    type: 'meat',
+    type: 'protein',
   };
 
   public rizspep: Food = {

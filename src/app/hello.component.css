@@ -22,3 +22,19 @@ h2 {
 .panel-header {
   background-color:lightgrey
 }
+
+.basic-table {
+  border: 1px solid black;
+}
+
+.basic-table > tr > td {
+  border: 1px solid black;
+}
+
+.basic-table > tr > th {
+  border: 1px solid black;
+}
+
+.basic-table > tr {
+  border: 1px solid black;
+}

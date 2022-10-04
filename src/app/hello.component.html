@@ -1,9 +1,58 @@
-
+<button (click)="getByDay()" mat-raised-button color="primary">Primary</button>
+<table class="basic-table">
+  <caption>Meals by day</caption>
+  <tr>
+    <th>
+      <div>Hétfő</div>
+    </th>
+    <th>
+      <div>Kedd</div>
+    </th>
+    <th>
+      <div>Szerda</div>
+    </th>
+    <th>
+      <div>Csütörtök</div>
+    </th>
+    <th>
+      <div>Péntek</div>
+    </th>
+    <th>
+      <div>Szombat</div>
+    </th>
+    <th>
+      <div>Vasárnap</div>
+    </th>
+  </tr>
+  <tr>
+    <td>
+      {{days.monday}}
+    </td>
+    <td>
+      {{days.tuesday}}
+    </td>
+    <td>
+      {{days.wednesday}}
+    </td>
+    <td>
+      {{days.thursday}}
+    </td>
+    <td>
+      {{days.friday}}
+    </td>
+    <td>
+      {{days.saturday}}
+    </td>
+    <td>
+      {{days.sunday}}
+    </td>
+  </tr>
+</table>
 <mat-accordion multi="true">
   <mat-expansion-panel [expanded]="true" (opened)="(true)">
     <mat-expansion-panel-header class="panel-header">
       <mat-panel-title>
-        <h2>Available foods</h2>
+        <h2>Alapanyagok</h2>
       </mat-panel-title>
     </mat-expansion-panel-header>
 
@@ -16,7 +65,7 @@
             <mat-accordion *ngIf="food.combinableWith" multi="false">
               <mat-expansion-panel [expanded]="false" (opened)="(false)">
                 <mat-expansion-panel-header style="background-color:lightgrey">
-                  <mat-panel-title> Combinable with </mat-panel-title>
+                  <mat-panel-title> Ezekkel kombinálható </mat-panel-title>
                 </mat-expansion-panel-header>
                 <div *ngFor="let subfood of sortListBy(food.combinableWith,'type')">
                   <p>
