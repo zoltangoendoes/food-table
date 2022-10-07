@@ -20,15 +20,18 @@ h2 {
 }
 
 .panel-header {
-  background-color:lightgrey
+  background-color:lightgrey;
 }
 
 .basic-table {
   border: 1px solid black;
+  table-layout: fixed;
+  width:100%;
+  min-height: 180px;
 }
 
 .basic-table > tr > td {
-  border: 1px solid black;
+  border: 1px solid black;  
 }
 
 .basic-table > tr > th {
@@ -37,4 +40,13 @@ h2 {
 
 .basic-table > tr {
   border: 1px solid black;
+}
+
+.combination {
+  display: flex;
+  align-items: center;  
+}
+
+.combination > mat-icon {
+  padding: 8px;
 }

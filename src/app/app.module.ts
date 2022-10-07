@@ -9,6 +9,8 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooditemComponent } from './fooditem/fooditem.component';
+import {MatTableModule} from '@angular/material/table';
+import { MealCombinationComponent } from './meal-combination/meal-combination.component';
 
 @NgModule({
   imports: [
@@ -18,9 +20,10 @@ import { FooditemComponent } from './fooditem/fooditem.component';
     MatExpansionModule,
     BrowserAnimationsModule,
     MatListModule,
-    MatButtonModule     
+    MatButtonModule,
+    MatTableModule
   ],
-  declarations: [AppComponent, HelloComponent, FooditemComponent],  
+  declarations: [AppComponent, HelloComponent, FooditemComponent, MealCombinationComponent],  
   bootstrap: [AppComponent],
 })
 export class AppModule {}

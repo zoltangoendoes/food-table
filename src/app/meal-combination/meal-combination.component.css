@@ -1,0 +1,11 @@
+.combination {
+    display: flex;
+    flex-direction: column;
+}
+
+.combo-item {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    justify-content: space-between;
+}

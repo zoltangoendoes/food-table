@@ -1,14 +1,26 @@
 .food-name-container{
     min-width: 100px;
-    margin-left:8px
+    margin-left:8px;
 }
 
 .fruit {
-    color: rgb(230, 90, 129)
+    color: rgb(230, 90, 129);
 }
 
 .vegetable {
-    color: rgb(53, 178, 53)
+    color: rgb(53, 178, 53);
+}
+
+.protein {
+    color: rgb(0, 149, 255);
+}
+
+.grain {
+    color: orange;
+}
+
+.spice {
+    color: rgb(87, 3, 87);
 }
 
 .flex-between {

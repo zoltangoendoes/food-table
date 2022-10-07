@@ -1,5 +1,5 @@
 <button (click)="getByDay()" mat-raised-button color="primary">Primary</button>
-<table class="basic-table">
+<table class="basic-table mat-elevation-z8">
   <caption>Meals by day</caption>
   <tr>
     <th>
@@ -48,6 +48,10 @@
     </td>
   </tr>
 </table>
+<div>
+  <h3>Kombinációk</h3>
+  <meal-combination></meal-combination>
+</div>
 <mat-accordion multi="true">
   <mat-expansion-panel [expanded]="true" (opened)="(true)">
     <mat-expansion-panel-header class="panel-header">
